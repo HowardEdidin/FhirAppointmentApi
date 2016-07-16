@@ -1,11 +1,7 @@
-﻿using System.Globalization;
-using System.Linq;
 using System.Web.Http;
-using System.Web.Http.Description;
-using Swashbuckle.Application;
-using Swashbuckle.Swagger;
 using WebActivatorEx;
 using FhirAppointmentApi;
+using Swashbuckle.Application;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -17,10 +13,10 @@ namespace FhirAppointmentApi
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
 
-            GlobalConfiguration.Configuration
+            GlobalConfiguration.Configuration 
                 .EnableSwagger(c =>
                     {
-                        // By default, the service root url is inferred from the request used to access the docs.
+                        // By default, the service root url is inferred from the appoinment used to access the docs.
                         // However, there may be situations (e.g. proxy and load-balanced environments) where this does not
                         // resolve correctly. You can workaround this by providing your own code to determine the root URL.
                         //
@@ -156,17 +152,6 @@ namespace FhirAppointmentApi
                         // to execute the operation
                         //
                         //c.OperationFilter<AssignOAuth2SecurityRequirements>();
-                        //
-
-                        // Set filter to eliminate duplicate operation ids from being generated
-                        // when there are multiple operations with the same verb in the API.
-                        // ***
-                        // If you would prefer to globally impact the Swagger operation id's rather
-                        // than control them on a per-action method basis, uncomment the next line 
-                        // and the IncludeParameterNamesInOperationIdFilter class below.
-                        // ***
-                        //c.OperationFilter<IncludeParameterNamesInOperationIdFilter>();
-                        //
 
                         // Post-modify the entire Swagger document by wiring up one or more Document filters.
                         // This gives full control to modify the final SwaggerDocument. You should have a good understanding of
@@ -186,12 +171,9 @@ namespace FhirAppointmentApi
                         // alternative implementation for ISwaggerProvider with the CustomProvider option.
                         //
                         //c.CustomProvider((defaultProvider) => new CachingSwaggerProvider(defaultProvider));
-                        // ***** Uncomment the following to enable the swagger UI *****
-                        /*
-                            })
-                        .EnableSwaggerUi(c =>
-                            {
-                        */
+                    })
+                .EnableSwaggerUi(c =>
+                    {
                         // Use the "InjectStylesheet" option to enrich the UI with one or more additional CSS stylesheets.
                         // The file must be included in your project as an "Embedded Resource", and then the resource's
                         // "Logical Name" is passed to the method as shown below.
@@ -224,7 +206,7 @@ namespace FhirAppointmentApi
 
                         // Use the CustomAsset option to provide your own version of assets used in the swagger-ui.
                         // It's typically used to instruct Swashbuckle to return your version instead of the default
-                        // when a request is made for "index.html". As with all custom content, the file must be included
+                        // when a appoinment is made for "index.html". As with all custom content, the file must be included
                         // in your project as an "Embedded Resource", and then the resource's "Logical Name" is passed to
                         // the method as shown below.
                         //
@@ -240,32 +222,8 @@ namespace FhirAppointmentApi
                         // If your API supports the OAuth2 Implicit flow, and you've described it correctly, according to
                         // the Swagger 2.0 specification, you can enable UI support as shown below.
                         //
-                        //c.EnableOAuth2Support("test-client-id", "test-realm", "Swagger UI");
+                        //c.EnableOAuth2Support("test-client-Id", "test-realm", "Swagger UI");
                     });
         }
     }
-
-    /// <summary>
-    /// If you would prefer to control the Swagger Operation ID
-    /// values globally, uncomment this class, as well as the 
-    /// call above that wires this Operation Filter into 
-    /// the pipeline.
-    /// </summary>
-    /*
-    internal class IncludeParameterNamesInOperationIdFilter : IOperationFilter
-    {
-        public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
-        {
-            if (operation.parameters != null)
-            {
-                // Select the capitalized parameter names
-                var parameters = operation.parameters.Select(
-                    p => CultureInfo.InvariantCulture.TextInfo.ToTitleCase(p.name));
-
-                // Set the operation id to match the format "OperationByParam1AndParam2"
-                operation.operationId = $"{operation.operationId}By{string.Join("And", parameters)}";
-            }
-        }
-    }
-    */
 }
