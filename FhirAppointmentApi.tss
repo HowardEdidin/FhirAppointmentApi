@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>d:\hse\Documents\Visual Studio 2015\Projects\FhirAppointmentApi\ViewAppointments\Views\Web.config</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\hse\Documents\Visual Studio 2015\Projects\FhirAppointmentApi\ViewAppointments\Views\Shared\_mainLayout.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\hse\Documents\Visual Studio 2015\Projects\FhirAppointmentApi\ViewAppointments\Views\Shared\HeaderPartialView.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>d:\hse\Documents\Visual Studio 2015\Projects\FhirAppointmentApi\ViewAppointments\Models\AppointmentRequest.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>

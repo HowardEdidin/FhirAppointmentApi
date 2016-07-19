@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 
-namespace FhirAppointmentApi.Models
+namespace ViewAppointments.Models
 {
     public class Reason
     {
-        [JsonProperty("text")]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text")]
         public string Text { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FhirAppointmentApi
+namespace ViewAppointments
 {
     public static class Utility
     {

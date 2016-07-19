@@ -1,11 +1,11 @@
 using System.Web.Http;
 using WebActivatorEx;
-using FhirAppointmentApi;
+using ViewAppointments;
 using Swashbuckle.Application;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
-namespace FhirAppointmentApi
+namespace ViewAppointments
 {
     public class SwaggerConfig
     {

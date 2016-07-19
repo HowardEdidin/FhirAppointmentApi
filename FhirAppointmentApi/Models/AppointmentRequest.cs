@@ -1,47 +1,33 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
-namespace FhirAppointmentApi.Models
+namespace ViewAppointments.Models
 {
     public class AppointmentRequest
     {
-        [JsonProperty("id")]
+        [JsonProperty(Order = 1, PropertyName = "id")]
         public string Id { get; set; }
 
-        [JsonProperty("resourceType")]
-        public string ResourceType { get; set; }
 
-        [JsonProperty("text")]
-        public Text Text { get; set; }
-
-        [JsonProperty("identifier")]
-        public Identifier Identifier { get; set; }
-
-        [JsonProperty("status")]
+        [JsonProperty(Order = 2, PropertyName = "status")]
         public string Status { get; set; }
 
-        [JsonProperty("type")]
-        public Type Type { get; set; }
 
-        [JsonProperty("reason")]
-        public Reason Reason { get; set; }
+        [JsonProperty(Order = 3, PropertyName = "priority")]
+        public int Priority { get; set; }
 
-        [JsonProperty("priority")]
-        public string Priority { get; set; }
-
-        [JsonProperty("description")]
+        [JsonProperty(Order = 4, PropertyName = "description")]
         public string Description { get; set; }
 
-        [JsonProperty("minutesDuration")]
-        public int MinutesDuration { get; set; }
 
-        [JsonProperty("slot")]
-        public Slot Slot { get; set; }
-
-        [JsonProperty("comment")]
+        [JsonProperty(Order = 7, PropertyName = "comment")]
         public string Comment { get; set; }
 
-        [JsonProperty("participant")]
-        public Participant Participant { get; set; }
 
+        [JsonProperty(Order = 5, PropertyName = "start")]
+        public DateTime Start { get; set; }
+
+        [JsonProperty(Order = 6, PropertyName = "end")]
+        public DateTime End { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace FhirAppointmentApi
+namespace ViewAppointments
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

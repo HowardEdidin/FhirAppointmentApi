@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace FhirAppointmentApi
+namespace ViewAppointments
 {
     /// <summary>
     /// 

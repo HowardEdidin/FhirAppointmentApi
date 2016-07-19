@@ -1,14 +1,21 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
-namespace FhirAppointmentApi.Models
+namespace ViewAppointments.Models
 {
+    
     public class Actor
     {
-        [JsonProperty("display")]
+        [JsonProperty(Order = 1, PropertyName = "reference", Required = Required.Always)]
+        public string Reference { get; set; }
+
+        [JsonProperty(Order = 2, PropertyName = "display", Required = Required.Always)]
         public string Display { get; set; }
 
 
-        [JsonProperty("reference")]
-        public string Reference { get; set; }
+        
+
+
+        
     }
 }

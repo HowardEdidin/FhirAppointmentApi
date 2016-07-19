@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace FhirAppointmentApi.Models
+namespace ViewAppointments.Models
 {
     // ReSharper disable once InconsistentNaming
     public class _Required

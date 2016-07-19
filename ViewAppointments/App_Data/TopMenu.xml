@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<items>
+  <item Text="Home" NavigateUrl="#" />
+  <item Text="Appointments" NavigateUrl="#"  />
+  <item Text="Admin" NavigateUrl="#"  />
+</items>

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace FhirAppointmentApi.Models
+namespace ViewAppointments.Models
 {
     public class Coding
     {
@@ -9,7 +9,7 @@ namespace FhirAppointmentApi.Models
         public string Code { get; set; }
 
 
-        [JsonProperty("display")]
+        [JsonProperty(PropertyName = "display", Required = Required.AllowNull)]
         public string Display { get; set; }
     }
 }

@@ -1,0 +1,15 @@
+<div class="headerTop">
+    <div class="templateTitle">
+        @Html.ActionLink("HL7 FHIR DEMO", "Index", "Home")
+    </div>
+</div>
+<div class="headerMenu">
+        @* DXCOMMENT: Configure the header menu *@
+    @Html.DevExpress().Menu(settings => {
+        settings.Name = "HeaderMenu";
+        settings.ItemAutoWidth = false;
+        settings.Width = Unit.Percentage(100);
+        settings.Styles.Style.Border.BorderWidth = Unit.Pixel(0);
+        settings.Styles.Style.BorderTop.BorderWidth = Unit.Pixel(1);
+    }).BindToXML(HttpContext.Current.Server.MapPath("~/App_Data/TopMenu.xml"), "/items/*").GetHtml()
+</div>

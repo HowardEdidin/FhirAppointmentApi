@@ -1,0 +1,28 @@
+@model System.Collections.IEnumerable
+
+<script type="text/javascript">
+
+    function OnCustomButtonClick(s, e) {
+        if (e.buttonID === "Listen") {
+            $.ajax({
+                url: '@Url.Action("PlayVoiceFile", "Home")',
+                type: "POST",
+                dataType: "json",
+                traditional: true,
+                data: { row: s.GetRowValues(e.visibleIndex, 'id') },
+                success: function(data) {
+                    alert(data);
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    alert('Request Status: ' + xhr.status + '; Status Text: ' + textStatus + '; Error: ' + errorThrown);
+                }
+            });
+            
+
+        }
+    }
+
+
+</script>
+
+@Html.Partial("GridViewPartialView", Model)
