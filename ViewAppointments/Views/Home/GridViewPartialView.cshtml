@@ -32,7 +32,7 @@
         settings.SettingsText.EmptyDataRow = "No Appoinments to Display";
 
         settings.SettingsText.Title = "Appointment Requests";
-        settings.Styles.TitlePanel.Border.BorderStyle = BorderStyle.Inset;
+        settings.Styles.TitlePanel.Border.BorderStyle = BorderStyle.Groove;
         settings.Styles.TitlePanel.Font.Bold = true;
 
         settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.HideDataCellsWindowLimit;
@@ -55,9 +55,7 @@
         settings.Styles.CommandColumn.BackColor = Color.AliceBlue;
 
 
-        settings.SettingsBehavior.AllowSelectByRowClick = true;
-        settings.SettingsBehavior.AllowFocusedRow = false;
-        settings.SettingsBehavior.AllowSelectSingleRowOnly = true;
+      
 
 
         var customButton = new GridViewCommandColumnCustomButton() { ID = "Listen", Text = "Listen" };
